@@ -1,0 +1,21 @@
+{
+    "name": "Generate Random Images",
+    "description": "",
+    "launch_path": "/index.html",
+},
+"developer": {
+    "name":"Carolina Ochoa",
+    "url": "https://portfolio1986.herokuapp.com/",
+},
+"locales": {
+    "es": {
+        "name" :" Generador de Imágenes random",
+    },
+    "en":{
+        "name": "Awesome Images Generator",
+    },
+    "default_locale":"en",
+    "permissions":{
+        "desktop-notifications":{}
+        }
+}

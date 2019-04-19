@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>radom Images Generatos</title>
+        <link rel="stylesheet" type="text/css" href="randomi.css">
+        <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+    </head>
+<body>
+<div class="image_frame">
+    
+<center><h1>Generador de Imágenes Random</h1>
+<p>Haz click en el botón para una nueva imagen</p>
+<img id ='myImg' src = ''  width="600px" height="400px">
+</center>
+<div class = "button_frame">
+    <center>
+<button class = "button1" onclick="location.reload()">Nueva Imagen</button> 
+</center>
+</div>
+<script>
+
+var request = new XMLHttpRequest()
+
+// Open a new connection, using the GET request on the URL endpoint
+request.open('GET', 'https://api.thecatapi.com/v1/images/search', true)
+
+request.onload = function () {
+    var data = JSON.parse(this.response)
+    console.log(data);
+    data.forEach(cat => {
+  // Log each movie's title
+    console.log(cat.url);
+    document.getElementById("myImg").src = cat.url;
+})  
+  }
+
+  
+
+
+// Send request
+request.send()
+</script>
+
+</body>
+</html>
